@@ -1108,7 +1108,7 @@ static const CGFloat kAttachmentsViewSize = 100.0f;
             for (VKPhoto *photo in photos) {
                 NSString *photoSrc = nil;
                 for (NSString *type in requiredSizes) {
-                    photoSrc = [photo.sizes photoSizeWithType:type].src;
+                    photoSrc = [photo.sizes photoSizeWithType:type].url;
                     if (photoSrc) break;
                 }
                 if (!photoSrc) {
