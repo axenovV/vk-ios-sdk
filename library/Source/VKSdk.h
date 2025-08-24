@@ -24,22 +24,21 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VKAccessToken.h"
-#import "VKPermissions.h"
-#import "VKUtil.h"
-#import "VKApi.h"
-#import "VKApiConst.h"
-#import "VKSdkVersion.h"
-#import "VKCaptchaViewController.h"
-#import "VKRequest.h"
-#import "VKBatchRequest.h"
-#import "NSError+VKError.h"
-#import "VKApiModels.h"
-#import "VKUploadImage.h"
-#import "VKShareDialogController.h"
-#import "VKActivity.h"
-#import "VKAuthorizationResult.h"
-
+#import <VKSdkFramework/VKAccessToken.h>
+#import <VKSdkFramework/VKPermissions.h>
+#import <VKSdkFramework/VKUtil.h>
+#import <VKSdkFramework/VKApi.h>
+#import <VKSdkFramework/VKApiConst.h>
+#import <VKSdkFramework/VKSdkVersion.h>
+#import <VKSdkFramework/VKCaptchaViewController.h>
+#import <VKSdkFramework/VKRequest.h>
+#import <VKSdkFramework/VKBatchRequest.h>
+#import <VKSdkFramework/NSError+VKError.h>
+#import <VKSdkFramework/VKApiModels.h>
+#import <VKSdkFramework/VKUploadImage.h>
+#import <VKSdkFramework/VKShareDialogController.h>
+#import <VKSdkFramework/VKActivity.h>
+#import <VKSdkFramework/VKAuthorizationResult.h>
 /**
  Options used for authorization.
  */
@@ -48,6 +47,11 @@ typedef NS_OPTIONS(NSUInteger, VKAuthorizationOptions) {
     VKAuthorizationOptionsUnlimitedToken = 1 << 0,
     ///Pass this option to disable usage of SFSafariViewController
     VKAuthorizationOptionsDisableSafariController = 1 << 1,
+    ///VKAuthorizationOptionsEnableProviders is deprecated. Now the transition to the authorization provider is performed automatically.
+    ///To disable the transition, use the VKAuthorizationOptionsDisableProviders option.
+    VKAuthorizationOptionsEnableProviders DEPRECATED_MSG_ATTRIBUTE("Now the transition to the authorization provider is performed automatically. To disable the transition, use the VKAuthorizationOptionsDisableProviders option.") = 1 << 2,
+    ///Pass this option to disable usage of authorization providers
+    VKAuthorizationOptionsDisableProviders = 1 << 3
 };
 
 /**
